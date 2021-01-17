@@ -1,4 +1,4 @@
-ALGORITHM linear_data_structure
+ALGORITHM linear_data_structure1
 VAR
 Set1 : ARRAY_OF INTEGER[N];
 Set2 : ARRAY_OF INTEGER[M];
@@ -19,12 +19,14 @@ Write(Set2[i])
 END_FOR
 Sum1:= 0;
 Sum2:= 0;
-FOR i FROM 0 TO Set1.(N-1) DO
-FOR j FROM 0 TO Set2.(M-1) DO
-    IF (Set1[i] == Set2[j]) THEN
+FOR i FROM 0 TO Set1.length-1 DO
+FOR j FROM 0 TO Set2.length-1 DO
+    IF (Set1[i] != Set2[j]) THEN
         Sum1:= Sum1+Set1[i];
+        ELSE IF (Set2[j] != Set1[i]) THEN
+            Sum1:= Sum1+Set2[j];
         ELSE
-        Sum2:= Sum2+Set1[i];    
+        Sum2:= Sum2+Set1[i] + Set2[j];
     END_IF
 END_FOR
 END_FOR
